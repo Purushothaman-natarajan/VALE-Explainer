@@ -1,5 +1,5 @@
-### Language-Aware Visual Explainer for Image Classifiers
-Language-Aware Visual Explanations (LAVE) ; a combination of text and visual explanation framework for image classification
+### Language-Aware Visual Explainer for Image Classifiers:
+Language-Aware Visual Explanations (LAVE) ; a combination of text and visual explanation framework for image classification.
 
 #### Overview:
 This repository hosts an innovative Explainer tool designed specifically for the ImageNet dataset. Unlike traditional methods that require training, our approach provides explanations using SHAP (SHapley Additive exPlanations) values. It offers clear visual masks highlighting the objects of interest using SHAP scores coordinates as prompts to the SAM (Segment Anything Model), and textual explanations for the visual masks using VLM Llava.
