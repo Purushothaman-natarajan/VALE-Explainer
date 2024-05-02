@@ -13,7 +13,7 @@ This repository hosts an innovative Explainer tool designed specifically for the
 #### How to Use:
 1. **Installation:**
    - Clone this repository to your local machine.
-   - Ensure all dependencies listed in the `ImageNet_LAVE_(SHAP).ipynb` file are installed accordingly.
+   - Ensure all dependencies listed in the `LAVE_(SHAP)_on_ImageNet.ipynb` file are installed accordingly.
 
 2. **Dataset Preparation:**
    - Any pre-trained model compatible with ImageNet can be used with this explainer.
