@@ -3,6 +3,12 @@
 #### Overview:
 This repository hosts an innovative Explainer tool designed specifically for the ImageNet dataset. Unlike traditional methods that require training, our approach provides explanations using SHAP (SHapley Additive exPlanations) values. It offers clear visual masks highlighting the objects of interest using SHAP scores coordinates as prompts to the SAM (Segment Anything Model), and textual explanations for the visual masks using VLM Llava.
 
+#### Architecture:
+
+<p align="center">
+<img src= "https://github.com/Purushothaman-natarajan/LAVE-Explainer/blob/main/data/Architecture%20SHAP.jpg" width="800" />
+</p>
+
 #### Features:
 - **SHAP-Based Explanations:** Utilizes SHAP values to explain model predictions without the need for additional training on the ImageNet dataset.
 - **Visual Mask Generation:** Generates clear visual masks highlighting objects of interest in images using coordinates with highest SHAP score as input prompt to the SAM.
@@ -39,7 +45,6 @@ This repository hosts an innovative Explainer tool designed specifically for the
 - Other dependencies listed in `ipynb file`
 
 #### Credits:
-- This project is developed by [Purushothaman Natarajan/SRMIST].
 - SHAP library: [SHAP GitHub Repository](https://github.com/slundberg/shap)
 - SAM (Segment Anything Model): [SAM GitHub Repository](https://github.com/samteam/sam)
 - VLM Llava: [VLM Llava GitHub Repository](https://github.com/VLM-Llava/vlm-llava)
