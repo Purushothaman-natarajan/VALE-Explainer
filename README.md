@@ -36,9 +36,14 @@ Clone the repository and install the dependencies listed in `requirements.txt`:
 ```bash
 git clone https://github.com/Purushothaman-natarajan/LAVE-Explainer.git
 cd LAVE-Explainer
-pip install -r requirements.txt
 ```
 
+#### Create a Conda Environment
+
+```bash
+conda env create -f environment.yaml
+conda activate LAVE-Explainer
+```
 
 ## Explainer Script
 
@@ -60,7 +65,7 @@ You can use either of the following scripts based on your model type:
 
 ## Model Training
 
-This section covers how to use the provided scripts to train a model for custom explanations.
+This section covers how to use the provided scripts to train a image classification model using transfer learning for your datasets.
 
 #### 1. `data_loader.py`
 
@@ -257,3 +262,4 @@ If you use this repository, please cite the following paper:
   year={2024}
 }
 ```
+------
