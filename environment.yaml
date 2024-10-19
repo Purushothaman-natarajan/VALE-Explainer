@@ -1,0 +1,9 @@
+name: LAVE-Explainer
+channels:
+  - default
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.9
+  - pip:
+    - -r requirements.txt
