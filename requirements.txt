@@ -1,11 +1,17 @@
 setuptools==71.1.0
 torch==2.2.2
+torchvision==0.17.2
 transformers==4.43.3
 numpy==1.26.4
-torchvision==0.17.2
 scikit-learn==1.2.2
 matplotlib==3.9.1
 seaborn==0.13.2
 tqdm==4.66.4
 gradio==4.39.0
-timm # OPTIONAL 
+timm # OPTIONAL
+
+Pillow==9.2.0
+shap==0.41.0
+segment-anything==0.1.1
+tinyllava @ git+https://github.com/bczhou/TinyLLaVA.git
+urllib3==1.26.12
