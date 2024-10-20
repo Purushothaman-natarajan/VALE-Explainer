@@ -19,7 +19,7 @@ LAVE offers an explainer for models based on the ImageNet dataset, allowing you 
 ## Architecture
 
 <p align="center">
-<img src= "https://github.com/Purushothaman-natarajan/LAVE-Explainer/blob/main/data/Architecture%20SHAP.jpg" width="800" />
+<img src= "https://github.com/Purushothaman-natarajan/LAVE-Explainer/blob/main/assets/Architecture%20SHAP.jpg" width="800" />
 </p>
 
 
