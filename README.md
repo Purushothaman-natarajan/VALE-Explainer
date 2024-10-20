@@ -1,5 +1,10 @@
 ### Language-Aware Visual Explanations (LAVE) ; a combination of text and visual explanation framework for image classification.
 
+
+[Purushothaman Natarajan](https://purushothaman-natarajan.github.io/), [Athira Nambiar](https://www.srmist.edu.in/faculty/dr-athira-m-nambiar/)
+
+[[`Paper`](https://www.arxiv.org/abs/2408.12808)] [[`BibTeX`](#Citation)]
+
 This repository presents **LAVE**, a unique explainer tool for the ImageNet dataset, combining both **SHAP** (SHapley Additive exPlanations) and **SAM** (Segment Anything Model) for visual masks, and **VLM Llava** for generating textual explanations. It allows users to generate both visual and textual explanations without requiring additional training. 
 
 ## Overview
