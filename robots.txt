@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://purushothaman-natarajan.github.io/VALE-Explainer/sitemap.xml

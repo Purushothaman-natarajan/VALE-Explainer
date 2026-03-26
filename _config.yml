@@ -1,0 +1,23 @@
+title: LAVE - Language-Aware Visual Explanations
+description: A multimodal explainability framework combining SHAP, SAM, and Vision Language Models for image classifier explanations.
+url: https://purushothaman-natarajan.github.io
+baseurl: /VALE-Explainer
+
+# SEO
+google_analytics: 
+twitter:
+  username: Purushothaman_natarajan
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - environment.yaml
+  - requirements.txt
