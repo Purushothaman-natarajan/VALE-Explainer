@@ -18,6 +18,8 @@
             --text-secondary: #5f6368;
             --border: #dadce0;
             --accent: #34a853;
+            --purple: #8e44ad;
+            --orange: #f57c00;
             --shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             --shadow-hover: 0 4px 8px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         }
@@ -72,7 +74,7 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary) 0%, #8e44ad 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -141,43 +143,6 @@
             font-size: 0.875rem;
             font-weight: 500;
             color: var(--text-secondary);
-        }
-        
-        .badge-icon {
-            width: 20px;
-            height: 20px;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 24px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .btn:hover {
-            background: var(--primary-dark);
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-1px);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            border: 1px solid var(--border);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--bg-secondary);
         }
         
         .section {
@@ -265,19 +230,137 @@
             padding: 24px;
             border-radius: 8px;
             overflow-x: auto;
-            font-family: 'Google Sans', 'Roboto Mono', monospace;
+            font-family: 'Roboto Mono', monospace;
             font-size: 0.875rem;
             line-height: 1.6;
         }
         
-        pre code {
-            color: #9cdcfe;
-        }
-        
+        pre code { color: #9cdcfe; }
         .comment { color: #6a9955; }
         .keyword { color: #c586c0; }
         .string { color: #ce9178; }
         .function { color: #dcdcaa; }
+        
+        .architecture {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            margin: 40px 0;
+        }
+        
+        .architecture h3 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .arch-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .arch-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .arch-box {
+            padding: 20px 32px;
+            border-radius: 12px;
+            font-weight: 500;
+            text-align: center;
+            min-width: 160px;
+            transition: all 0.2s ease;
+        }
+        
+        .arch-box:hover {
+            transform: scale(1.05);
+        }
+        
+        .arch-input { background: #e8f5e9; border: 2px solid #34a853; color: #1b5e20; }
+        .arch-shap { background: #fff3e0; border: 2px solid #f57c00; color: #e65100; }
+        .arch-sam { background: #e3f2fd; border: 2px solid #1976d2; color: #0d47a1; }
+        .arch-vlm { background: #f3e5f5; border: 2px solid #8e44ad; color: #4a148c; }
+        .arch-output { background: #fce4ec; border: 2px solid #d81b60; color: #880e4f; }
+        
+        .arch-arrow {
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .arch-arrow-down {
+            font-size: 2rem;
+        }
+        
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .docs-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.2s ease;
+        }
+        
+        .docs-card:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .docs-card h4 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        .docs-card p {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: 16px;
+        }
+        
+        .docs-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .docs-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .docs-card li:last-child { border-bottom: none; }
+        
+        .supported-models {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .model-tag {
+            padding: 4px 12px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
         
         .links-section {
             display: flex;
@@ -306,11 +389,6 @@
             box-shadow: var(--shadow);
         }
         
-        .link-icon {
-            width: 24px;
-            height: 24px;
-        }
-        
         footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -328,50 +406,13 @@
             text-decoration: none;
         }
         
-        .architecture {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .architecture h3 {
-            font-family: 'Google Sans', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
-        
-        .flow-diagram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        
-        .flow-box {
-            padding: 16px 24px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-weight: 500;
-        }
-        
-        .flow-arrow {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-        
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
             nav { display: none; }
             .section { padding: 48px 0; }
-            .flow-diagram { flex-direction: column; }
-            .flow-arrow { transform: rotate(90deg); }
+            .arch-row { flex-direction: column; }
+            .arch-arrow { transform: rotate(90deg); }
         }
     </style>
 </head>
@@ -384,10 +425,10 @@
             </a>
             <nav>
                 <a href="#features">Features</a>
-                <a href="#quickstart">Quick Start</a>
                 <a href="#architecture">Architecture</a>
+                <a href="#docs">Docs</a>
+                <a href="#quickstart">Quick Start</a>
                 <a href="#cite">Citation</a>
-                <a href="https://github.com/Purushothaman-natarajan/VALE-Explainer">GitHub</a>
             </nav>
         </div>
     </header>
@@ -397,26 +438,12 @@
             <h1>Language-Aware<br>Visual Explanations</h1>
             <p>A multimodal explainability framework that combines SHAP, SAM, and Vision Language Models to provide both visual and textual explanations for image classifiers.</p>
             <div class="hero-badges">
-                <span class="badge">
-                    <span class="badge-icon">📄</span>
-                    MIT License
-                </span>
-                <span class="badge">
-                    <span class="badge-icon">🐍</span>
-                    Python 3.8+
-                </span>
-                <span class="badge">
-                    <span class="badge-icon">🔥</span>
-                    PyTorch
-                </span>
-                <span class="badge">
-                    <span class="badge-icon">📊</span>
-                    SHAP
-                </span>
-                <span class="badge">
-                    <span class="badge-icon">🎯</span>
-                    SAM
-                </span>
+                <span class="badge">📄 MIT License</span>
+                <span class="badge">🐍 Python 3.8+</span>
+                <span class="badge">🔥 PyTorch</span>
+                <span class="badge">📊 SHAP</span>
+                <span class="badge">🎯 SAM</span>
+                <span class="badge">💬 VLM</span>
             </div>
         </div>
     </section>
@@ -446,7 +473,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
                     <h3>Flexible</h3>
-                    <p>Supports both custom-trained and pre-trained models. Compatible with ResNet, VGG, DenseNet, and more.</p>
+                    <p>Supports both custom-trained and pre-trained models. Compatible with multiple architectures.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
@@ -464,18 +491,157 @@
 
     <section id="architecture" class="section">
         <div class="container">
+            <div class="section-header">
+                <h2>Architecture</h2>
+                <p>How LAVE combines multiple AI techniques to explain model predictions</p>
+            </div>
+            
             <div class="architecture">
-                <h3>How It Works</h3>
-                <div class="flow-diagram">
-                    <div class="flow-box">📷 Input Image</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">📊 SHAP Explainer</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">🎯 SAM Segmenter</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">💬 TinyLLaVA</div>
-                    <span class="flow-arrow">→</span>
-                    <div class="flow-box">✨ Combined Output</div>
+                <h3>System Pipeline</h3>
+                <div class="arch-diagram">
+                    <div class="arch-row">
+                        <div class="arch-box arch-input">
+                            <div style="font-size: 2rem;">📷</div>
+                            <div>Input Image</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow-down">↓</div>
+                    <div class="arch-row">
+                        <div class="arch-box arch-shap">
+                            <div style="font-size: 2rem;">📊</div>
+                            <div>SHAP Explainer</div>
+                            <div style="font-size: 0.75rem; margin-top: 4px;">Feature Importance</div>
+                        </div>
+                        <span class="arch-arrow">→</span>
+                        <div class="arch-box arch-sam">
+                            <div style="font-size: 2rem;">🎯</div>
+                            <div>SAM Segmenter</div>
+                            <div style="font-size: 0.75rem; margin-top: 4px;">Visual Mask</div>
+                        </div>
+                        <span class="arch-arrow">→</span>
+                        <div class="arch-box arch-vlm">
+                            <div style="font-size: 2rem;">💬</div>
+                            <div>TinyLLaVA</div>
+                            <div style="font-size: 0.75rem; margin-top: 4px;">Text Generation</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow-down">↓</div>
+                    <div class="arch-row">
+                        <div class="arch-box arch-output">
+                            <div style="font-size: 2rem;">✨</div>
+                            <div>Combined Output</div>
+                            <div style="font-size: 0.75rem; margin-top: 4px;">Visual + Textual</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h4>📊 SHAP (SHapley Additive exPlanations)</h4>
+                    <p>Computes feature importance values using game theory to explain model predictions.</p>
+                    <ul>
+                        <li>DeepExplainer for neural networks</li>
+                        <li>Gradient-based attribution</li>
+                        <li>Input → Feature importance map</li>
+                    </ul>
+                </div>
+                
+                <div class="docs-card">
+                    <h4>🎯 SAM (Segment Anything Model)</h4>
+                    <p>Meta's state-of-the-art segmentation model for generating precise visual masks.</p>
+                    <ul>
+                        <li>ViT-H based architecture</li>
+                        <li>Point-based prompting</li>
+                        <li>Important regions → Binary mask</li>
+                    </ul>
+                </div>
+                
+                <div class="docs-card">
+                    <h4>💬 TinyLLaVA (Vision Language Model)</h4>
+                    <p>Efficient VLM for generating natural language explanations from visual inputs.</p>
+                    <ul>
+                        <li>3.1B parameters</li>
+                        <li>Image captioning</li>
+                        <li>Masked image → Text description</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="docs" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Documentation</h2>
+                <p>Everything you need to get started with LAVE</p>
+            </div>
+            
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h4>🚀 Installation</h4>
+                    <p>Set up your development environment with all required dependencies.</p>
+                    <ul>
+                        <li>Clone repository</li>
+                        <li>Create conda environment</li>
+                        <li>Download model checkpoints</li>
+                    </ul>
+                </div>
+                
+                <div class="docs-card">
+                    <h4>🔧 Training</h4>
+                    <p>Train custom models using transfer learning with pre-trained backbones.</p>
+                    <ul>
+                        <li>Data preprocessing</li>
+                        <li>Model training script</li>
+                        <li>Evaluation & testing</li>
+                    </ul>
+                </div>
+                
+                <div class="docs-card">
+                    <h4>🎯 Inference</h4>
+                    <p>Run predictions and generate explanations for new images.</p>
+                    <ul>
+                        <li>Pre-trained models</li>
+                        <li>Custom models</li>
+                        <li>Batch processing</li>
+                    </ul>
+                </div>
+                
+                <div class="docs-card">
+                    <h4>🧩 Supported Models</h4>
+                    <p>LAVE supports multiple backbone architectures for training.</p>
+                    <div class="supported-models">
+                        <span class="model-tag">ResNet18</span>
+                        <span class="model-tag">ResNet50</span>
+                        <span class="model-tag">VGG16</span>
+                        <span class="model-tag">DenseNet121</span>
+                        <span class="model-tag">MobileNetV2</span>
+                        <span class="model-tag">EfficientNet</span>
+                        <span class="model-tag">AlexNet</span>
+                        <span class="model-tag">+more</span>
+                    </div>
+                </div>
+                
+                <div class="docs-card">
+                    <h4>📁 Project Structure</h4>
+                    <p>Understanding the repository organization.</p>
+                    <ul>
+                        <li>train.py - Training script</li>
+                        <li>test.py - Testing script</li>
+                        <li>predict.py - Prediction script</li>
+                        <li>*_explainer.py - Explanation modules</li>
+                    </ul>
+                </div>
+                
+                <div class="docs-card">
+                    <h4>🤝 Contributing</h4>
+                    <p>Help improve LAVE by contributing code or documentation.</p>
+                    <ul>
+                        <li>Fork the repository</li>
+                        <li>Follow coding standards</li>
+                        <li>Submit pull request</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -498,8 +664,9 @@ cd LAVE-Explainer
 conda env create -f environment.yaml
 conda activate LAVE-Explainer
 
-<span class="comment"># Or install directly</span>
-pip install -r requirements.txt</code></pre>
+<span class="comment"># Download model checkpoints</span>
+<span class="comment"># SAM: https://github.com/facebookresearch/segment-anything</span>
+<span class="comment"># TinyLLaVA: from HuggingFace</span></code></pre>
             </div>
             
             <div class="code-section">
@@ -521,14 +688,14 @@ python custom_model_explainer.py \
                 <h3>Python API</h3>
                 <pre><code><span class="keyword">from</span> pre_trained_model_explainer <span class="keyword">import</span> PyTorchExplainableWrapper
 
-<span class="comment"># Initialize the explainer</span>
+<span class="comment"># Initialize</span>
 explainer = PyTorchExplainableWrapper(
     model_name_or_path=<span class="string">"densenet121"</span>,
     sam_checkpoint=<span class="string">"./sam_vit_h.pth"</span>,
     tiny_llava_model_path=<span class="string">"bczhou/TinyLLaVA-3.1B"</span>
 )
 
-<span class="comment"># Run the full pipeline</span>
+<span class="comment"># Run explanation pipeline</span>
 explainer.run_pipeline(<span class="string">"path/to/image.jpg"</span>)</code></pre>
             </div>
         </div>
@@ -553,16 +720,13 @@ explainer.run_pipeline(<span class="string">"path/to/image.jpg"</span>)</code></
 
     <section class="links-section">
         <a href="https://github.com/Purushothaman-natarajan/VALE-Explainer" class="link-card">
-            <span class="link-icon">📂</span>
-            GitHub Repository
+            📂 GitHub Repository
         </a>
         <a href="https://arxiv.org/abs/2408.12808" class="link-card">
-            <span class="link-icon">📄</span>
-            Research Paper
+            📄 Research Paper
         </a>
         <a href="https://purushothaman-natarajan.github.io/" class="link-card">
-            <span class="link-icon">🌐</span>
-            Author Website
+            🌐 Author Website
         </a>
     </section>
 
