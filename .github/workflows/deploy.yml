@@ -9,7 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
       pages: write
       id-token: write
     environment:
@@ -21,16 +20,13 @@ jobs:
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          static_site_generator: "none"
       
-      - name: Build site
-        run: |
-          mkdir -p _site
-          cp index.html _site/index.html
-      
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '_site'
+          path: 'index.html'
       
       - name: Deploy
         id: deployment
