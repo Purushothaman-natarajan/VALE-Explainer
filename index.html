@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVE: Language-Aware Visual Explanations</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --bg: #0f172a;
+            --text: #e2e8f0;
+            --card-bg: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            border-radius: 2rem;
+            margin: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .badges {
+            margin-top: 1rem;
+        }
+        
+        .section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feature {
+            background: var(--bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #334155;
+        }
+        
+        .feature h3 {
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+        
+        code {
+            background: #334155;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+        }
+        
+        pre {
+            background: #0f172a;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        a:hover {
+            background: var(--secondary);
+        }
+        
+        .repo-link {
+            background: #7c3aed;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            border-top: 1px solid #334155;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+            .section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LAVE</h1>
+            <p class="subtitle">Language-Aware Visual Explanations - A multimodal visual and language explanation framework for image classifiers using eXplainable AI and Language Models</p>
+            <div class="badges">
+                <span class="badge">MIT License</span>
+                <span class="badge">PyTorch</span>
+                <span class="badge">SHAP</span>
+                <span class="badge">SAM</span>
+                <span class="badge">VLM</span>
+            </div>
+        </header>
+        
+        <div class="section">
+            <h2>Overview</h2>
+            <p>LAVE provides both <strong>visual</strong> and <strong>textual</strong> explanations for image classification models by combining:</p>
+            <ul style="margin: 1rem 0 1rem 1.5rem;">
+                <li><strong>SHAP</strong> - SHapley Additive exPlanations for feature importance</li>
+                <li><strong>SAM</strong> - Segment Anything Model for precise visual masks</li>
+                <li><strong>TinyLLaVA</strong> - Vision Language Model for text generation</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>No Training Required</h3>
+                    <p>Works directly with pre-trained models without additional training</p>
+                </div>
+                <div class="feature">
+                    <h3>Visual Explanations</h3>
+                    <p>Highlight important image regions using SHAP + SAM</p>
+                </div>
+                <div class="feature">
+                    <h3>Textual Explanations</h3>
+                    <p>Generate human-readable descriptions of predictions</p>
+                </div>
+                <div class="feature">
+                    <h3>Flexible</h3>
+                    <p>Supports both custom-trained and pre-trained models</p>
+                </div>
+                <div class="feature">
+                    <h3>Edge-Optimized</h3>
+                    <p>Includes optimizations for deployment on edge devices</p>
+                </div>
+                <div class="feature">
+                    <h3>Open Source</h3>
+                    <p>MIT licensed, free to use and modify</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Quick Start</h2>
+            <h3>Installation</h3>
+            <pre><code>git clone https://github.com/Purushothaman-natarajan/LAVE-Explainer.git
+cd LAVE-Explainer
+conda env create -f environment.yaml
+conda activate LAVE-Explainer</code></pre>
+            
+            <h3 style="margin-top: 1.5rem;">Run Explainer</h3>
+            <pre><code># Pre-trained model
+python pre-trained_model_explainer.py --model_name densenet121 --img_path image.jpg
+
+# Custom model
+python custom_model_explainer.py --model_path model.pth --img_path image.jpg</code></pre>
+        </div>
+        
+        <div class="section">
+            <h2>Research</h2>
+            <p>If you use this code in your research, please cite our paper:</p>
+            <pre><code>@article{natarajan2024vale,
+  title={VALE: A Multimodal Visual and Language Explanation Framework for Image Classifiers Using eXplainable AI and Language Models},
+  author={Natarajan, Purushothaman and Nambiar, Athira},
+  journal={arXiv preprint arXiv:2408.12808},
+  year={2024}
+}</code></pre>
+        </div>
+        
+        <div class="section">
+            <h2>Links</h2>
+            <div class="links">
+                <a href="https://github.com/Purushothaman-natarajan/LAVE-Explainer" class="repo-link">GitHub Repository</a>
+                <a href="https://arxiv.org/abs/2408.12808">Paper</a>
+                <a href="https://purushothaman-natarajan.github.io/">Author Website</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>LAVE-Explainer &copy; 2024 Purushothaman Natarajan, Athira Nambiar</p>
+            <p>Supported by DRDO, India</p>
+        </footer>
+    </div>
+</body>
+</html>
